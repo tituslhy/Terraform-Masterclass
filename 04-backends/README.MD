@@ -115,3 +115,23 @@ Add the help flag to any terraform command you're running
 ```
 terraform -help
 ```
+
+## Backends
+It is conventional to write your backend configurations to different terraform files so that you can run them in different environments.
+
+Note: Whenever you rewrite a block in the `terraform` block you must run:
+```
+terraform init -migrate-state
+```
+
+To pass in the backend file:
+```
+terraform init -backend-config="prod.s3.tfbackend" -migrate-state
+```
+
+In CI/CD environments this allows us to deploy in different environments.
+
+To pass in a specific key-value pair:
+```
+terraform init -backend-config=region=eu-west-1 -migrate-config
+```

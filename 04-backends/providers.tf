@@ -13,6 +13,8 @@ terraform {
   }
   # Creating an s3 backend. Notice that terraform does not create
   # this backend s3 for us! So it must be present to begin with.
+  # You can leave the block empty and load in a file or just
+  # write the codes in.
   backend "s3" {
     bucket = "terraform-course-titus-remote-backend"
     key    = "04-backends/state.tfstate"
