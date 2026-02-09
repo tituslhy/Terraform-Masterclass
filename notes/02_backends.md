@@ -1,7 +1,4 @@
-# Notes
-It's convention to setup your required providers in a `providers.tf` or `main.tf` file, and place the relevant resources in other files.
-
-In terraform there isn't a need to explicitly import a file if the `.tf` file is in the main directory. All `.tf` files in sub directory WILL BE IGNORED unless you import the folder.
+# How to use backends
 
 ## Whenever you update a key in the `terraform block`
 Definitely always run `terraform init`
