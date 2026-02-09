@@ -17,9 +17,8 @@ terraform {
     bucket = "terraform-course-titus-remote-backend"
     key    = "04-backends/state.tfstate"
     region = "us-east-1"
-    # dynamo db tables can be used for locking purposes
-    # Note that not all backends allow for locking
-    # dynamodb_table = "my-dynamodb-table"
+    ### Handle locking within AWS s3:
+    # use_lockfile = true
   }
 }
 
