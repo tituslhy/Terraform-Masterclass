@@ -2,7 +2,9 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
+      # "~>" only allows the rightmost digit to increment
+      # Can also use ranges ">=", "<=" or ">1.5.0, <1.7.0"
       version = "~> 5.0"
     }
   }

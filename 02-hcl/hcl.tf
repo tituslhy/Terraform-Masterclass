@@ -1,4 +1,7 @@
 # Required block
+# Configures our terraform project. Can take in multiple
+# cloud providers. ONLY CONSTANTS ARE ALLOWED within this
+# block. You can't call in variables defined by other blocks
 terraform {
   required_providers {
     aws = {
