@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   #   AMI ID NGINX = "ami-084eda252c79fa3ef"
   ami                         = "ami-0030e4319cbf4dbf2" #AMI for ubuntu. reference: https://cloud-images.ubuntu.com/locator/ec2/
-  associate_public_ip_address = true
+  associate_public_ip_address = true                    #If this is missing, the instance inherits the setting `map_public_ip_on_launch` on the Subnet `aws_subnet.main` where the instance is placed.
   instance_type               = "t3.micro"
   subnet_id                   = aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.public_http_traffic.id]
